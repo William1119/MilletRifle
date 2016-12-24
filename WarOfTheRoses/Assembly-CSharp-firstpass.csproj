@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{FAED6670-7DA2-B6A4-86A6-07C8860E5195}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>Assembly-CSharp-firstpass</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <BaseDirectory>Assets</BaseDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Temp\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_3_4;UNITY_5_3;UNITY_5;ENABLE_NEW_BUGREPORTER;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_FRAME_DEBUGGER;ENABLE_GENERICS;ENABLE_HOME_SCREEN;ENABLE_IMAGEEFFECTS;ENABLE_LIGHT_PROBES_LEGACY;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_PLUGIN_INSPECTOR;ENABLE_SHADOWS;ENABLE_SINGLE_INSTANCE_BUILD_SETTING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_SPRITE_POLYGON;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;INCLUDE_IL2CPP;INCLUDE_DIRECTX12;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_LOCALIZATION;ENABLE_ANDROID_ATLAS_ETC1_COMPRESSION;ENABLE_EDITOR_TESTS_RUNNER;UNITY_WEBPLAYER;ENABLE_SUBSTANCE;WEBPLUG;ENABLE_TEXTUREID_MAP;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_MONO;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;UNITY_TEAM_LICENSE;UNITY_PRO_LICENSE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Temp\bin\Release\</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>0169</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="UnityEngine">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEditor">
+      <HintPath>D:/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+     <Compile Include="Assets\Standard Assets\Scripts\Bullet\Bullet.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Bullet\Mine.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Enemy\EnemyTank_AI_1.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Enemy\RobotAI.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Enemy\Tank.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Hero\CallSkill.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Hero\Hero.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Hero\MoveController.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Hero\P1_HeroController.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Hero\Weapons.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Map\LoadXml.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Map\Map.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\Map\Roadblock.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\UI\CameraFlow.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\UI\EventTriggerListener.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\UI\FPS.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\UI\MyJoystack.cs" />
+     <Compile Include="Assets\Standard Assets\Scripts\UI\MyJoystack2.cs" />
+     <None Include="Assets\Resources\Shaders\Unlit Lightmap-Unlit_Transparent.shader" />
+     <None Include="Assets\Resources\Shaders\StatueDiffuse.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Additive ZTestOff.shader" />
+     <None Include="Assets\Resources\Shaders\CharShaderblw.shader" />
+     <None Include="Assets\Resources\Shaders\Particle Add Area Clip.shader" />
+     <None Include="Assets\Resources\Shaders\NGCharShader_Outline_Opacity.shader" />
+     <None Include="Assets\Resources\Shaders\Diffuse Outline.shader" />
+     <None Include="Assets\Resources\Shaders\NGCharShader_Base_Dissolve.shader" />
+     <None Include="Assets\Resources\Shaders\Toony-LightedOutline.shader" />
+     <None Include="Assets\Resources\Shaders\Transparent_DF.shader" />
+     <None Include="Assets\Resources\Shaders\StatueBmp.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit.shader" />
+     <None Include="Assets\Resources\Shaders\ghost_diffuse.shader" />
+     <None Include="Assets\Resources\Shaders\Hologram.shader" />
+     <None Include="Assets\Resources\Shaders\disintegrate.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Alpha Blend ZTestOff.shader" />
+     <None Include="Assets\Resources\Config\Weapons.xml" />
+     <None Include="Assets\Resources\Shaders\NGCharShader_RimLight.shader" />
+     <None Include="Assets\Resources\Shaders\AlphaTest-Diffuse.shader" />
+     <None Include="Assets\Resources\Shaders\Diffuse Dissolve.shader" />
+     <None Include="Assets\Resources\Config\Roles.xml" />
+     <None Include="Assets\Resources\Config\Map\Map001.xml" />
+     <None Include="Assets\Resources\Shaders\Unlit Transparent.shader" />
+     <None Include="Assets\Resources\Shaders\SelfAlphaTest_Diffuse.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Additive ZWriteOn.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Additive Area Clip.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Outline.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Dissolve.shader" />
+     <None Include="Assets\Res\EffectRes\character\Shader\Mobile-Lightmap-Unlit.shader" />
+     <None Include="Assets\Resources\Shaders\CharShaderbump.shader" />
+     <None Include="Assets\Resources\Shaders\alpha_diffuse.shader" />
+     <None Include="Assets\Res\EffectRes\character\Shader\UnlitTint.shader" />
+     <None Include="Assets\Resources\Shaders\CharShader.shader" />
+     <None Include="Assets\Resources\Shaders\NGCharShader_Outline.shader" />
+     <None Include="Assets\Resources\Config\Carriers.xml" />
+     <None Include="Assets\Resources\Shaders\Unlit Additive ZTestOff Area Clip.shader" />
+     <None Include="Assets\Resources\Shaders\Particle Alpha Blend Area Clip.shader" />
+     <None Include="Assets\Resources\Shaders\Toony-Basic.shader" />
+     <None Include="Assets\Resources\Shaders\Diffuse Rimlight.shader" />
+     <None Include="Assets\Resources\Shaders\disintegrate_nmp.shader" />
+     <None Include="Assets\Resources\Shaders\NGCharShader_All.shader" />
+     <None Include="Assets\Resources\Shaders\SelfIllumination_Diffuse.shader" />
+     <None Include="Assets\Resources\Shaders\NGCharShader_Base.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Alpha Blend.shader" />
+     <None Include="Assets\Resources\Shaders\Particle Blend Area Clip.shader" />
+     <None Include="Assets\Resources\Shaders\Diffuse Transparent.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Alpha Blend ZWriteOn.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Additive.shader" />
+     <None Include="Assets\Resources\Shaders\ghost.shader" />
+     <None Include="Assets\Resources\Shaders\Toony-BasicOutline.shader" />
+     <None Include="Assets\Resources\Shaders\Unlit Alpha Blend Area Clip.shader" />
+     <None Include="Assets\Resources\Shaders\Toony-Lighted.shader" />
+ <Reference Include="UnityEngine.UI">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Networking">
+ <HintPath>D:/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  
+</Project>

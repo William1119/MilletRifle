@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 422_skill04_object_blend_03_128
+  m_Shader: {fileID: 4800000, guid: 9fc8941e9acaf8249ab46b8129df6946, type: 3}
+  m_ShaderKeywords:
+  - MASK_OFF
+  - _FLOW_OFF
+  - _SEPARATEALPHA_ON
+  m_CustomRenderQueue: 3000
+  m_SavedProperties:
+    serializedVersion: 2
+    m_TexEnvs:
+      data:
+        first:
+          name: _MainTex
+        second:
+          m_Texture: {fileID: 2800000, guid: 82955e6823a424c4f8b591911a5103ce, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MaskTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _FlowTex
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _AlphaTex
+        second:
+          m_Texture: {fileID: 2800000, guid: fd4cf32ca01aa9d4689d082c4b14cea6, type: 3}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+    m_Floats:
+      data:
+        first:
+          name: _Brightness
+        second: 1
+      data:
+        first:
+          name: _Rotate
+        second: 0
+      data:
+        first:
+          name: _MaskRotate
+        second: 0
+      data:
+        first:
+          name: _Flow
+        second: 0
+      data:
+        first:
+          name: _FlowRotate
+        second: 0
+      data:
+        first:
+          name: _SeparateAlpha
+        second: 1
+      data:
+        first:
+          name: _AlphaCtrl
+        second: 1
+      data:
+        first:
+          name: _InvFade
+        second: 1
+    m_Colors:
+      data:
+        first:
+          name: _Color
+        second: {r: 1, g: 1, b: 1, a: 1}
+      data:
+        first:
+          name: _UVParam
+        second: {r: 0, g: 0, b: 1, a: 1}
+      data:
+        first:
+          name: _UVTile
+        second: {r: 0, g: 0, b: 1, a: 1}
+      data:
+        first:
+          name: _MaskUVParam
+        second: {r: 0, g: 0, b: 1, a: 1}
+      data:
+        first:
+          name: _FlowUVParam
+        second: {r: 0, g: 0, b: 0, a: -.5}
+      data:
+        first:
+          name: _TintColor
+        second: {r: .5, g: .5, b: .5, a: .5}

@@ -1,0 +1,321 @@
+fileFormatVersion: 2
+guid: 75d5fa0965303b744a4f1fec843b1f95
+timeCreated: 1482488316
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cylinder002
+    100004: Cylinder003
+    100006: DrawCall_0004
+    100008: DrawCall_0008
+    100010: DrawCall_0009
+    100012: DrawCall_0013
+    100014: DrawCall_0014
+    100016: DrawCall_0015
+    100018: DrawCall_0017
+    100020: DrawCall_0018
+    100022: DrawCall_0019
+    100024: DrawCall_0020
+    100026: DrawCall_0021
+    100028: DrawCall_0021 1
+    100030: DrawCall_0022
+    100032: DrawCall_0022 1
+    100034: DrawCall_0023
+    100036: DrawCall_0027
+    100038: DrawCall_0028
+    100040: DrawCall_0029
+    100042: DrawCall_0031
+    100044: DrawCall_0032
+    100046: DrawCall_0034
+    100048: DrawCall_0035
+    100050: DrawCall_0070
+    100052: DrawCall_0071
+    100054: DrawCall_0078
+    100056: DrawCall_0085
+    100058: DrawCall_0086
+    100060: DrawCall_0092
+    100062: DrawCall_0097
+    100064: DrawCall_0098
+    100066: DrawCall_0101
+    100068: DrawCall_0101 1
+    100070: DrawCall_0102
+    100072: DrawCall_0103
+    100074: DrawCall_0105
+    100076: DrawCall_0106
+    100078: DrawCall_0108
+    100080: DrawCall_0116
+    100082: DrawCall_0116 1
+    100084: DrawCall_0117
+    100086: DrawCall_0117 1
+    100088: DrawCall_0118
+    100090: DrawCall_0118 1
+    100092: DrawCall_0119
+    100094: DrawCall_0120
+    100096: DrawCall_0121
+    100098: DrawCall_0125
+    100100: DrawCall_0128
+    100102: DrawCall_0142
+    100104: DrawCall_0144
+    100106: DrawCall_0145
+    100108: DrawCall_0146
+    400000: //RootNode
+    400002: Cylinder002
+    400004: Cylinder003
+    400006: DrawCall_0004
+    400008: DrawCall_0008
+    400010: DrawCall_0009
+    400012: DrawCall_0013
+    400014: DrawCall_0014
+    400016: DrawCall_0015
+    400018: DrawCall_0017
+    400020: DrawCall_0018
+    400022: DrawCall_0019
+    400024: DrawCall_0020
+    400026: DrawCall_0021
+    400028: DrawCall_0021 1
+    400030: DrawCall_0022
+    400032: DrawCall_0022 1
+    400034: DrawCall_0023
+    400036: DrawCall_0027
+    400038: DrawCall_0028
+    400040: DrawCall_0029
+    400042: DrawCall_0031
+    400044: DrawCall_0032
+    400046: DrawCall_0034
+    400048: DrawCall_0035
+    400050: DrawCall_0070
+    400052: DrawCall_0071
+    400054: DrawCall_0078
+    400056: DrawCall_0085
+    400058: DrawCall_0086
+    400060: DrawCall_0092
+    400062: DrawCall_0097
+    400064: DrawCall_0098
+    400066: DrawCall_0101
+    400068: DrawCall_0101 1
+    400070: DrawCall_0102
+    400072: DrawCall_0103
+    400074: DrawCall_0105
+    400076: DrawCall_0106
+    400078: DrawCall_0108
+    400080: DrawCall_0116
+    400082: DrawCall_0116 1
+    400084: DrawCall_0117
+    400086: DrawCall_0117 1
+    400088: DrawCall_0118
+    400090: DrawCall_0118 1
+    400092: DrawCall_0119
+    400094: DrawCall_0120
+    400096: DrawCall_0121
+    400098: DrawCall_0125
+    400100: DrawCall_0128
+    400102: DrawCall_0142
+    400104: DrawCall_0144
+    400106: DrawCall_0145
+    400108: DrawCall_0146
+    2300000: Cylinder002
+    2300002: Cylinder003
+    2300004: DrawCall_0004
+    2300006: DrawCall_0008
+    2300008: DrawCall_0009
+    2300010: DrawCall_0013
+    2300012: DrawCall_0014
+    2300014: DrawCall_0015
+    2300016: DrawCall_0019
+    2300018: DrawCall_0021
+    2300020: DrawCall_0022
+    2300022: DrawCall_0022 1
+    2300024: DrawCall_0023
+    2300026: DrawCall_0027
+    2300028: DrawCall_0028
+    2300030: DrawCall_0029
+    2300032: DrawCall_0031
+    2300034: DrawCall_0032
+    2300036: DrawCall_0034
+    2300038: DrawCall_0035
+    2300040: DrawCall_0078
+    2300042: DrawCall_0085
+    2300044: DrawCall_0086
+    2300046: DrawCall_0092
+    2300048: DrawCall_0101
+    2300050: DrawCall_0101 1
+    2300052: DrawCall_0102
+    2300054: DrawCall_0103
+    2300056: DrawCall_0105
+    2300058: DrawCall_0106
+    2300060: DrawCall_0108
+    2300062: DrawCall_0116
+    2300064: DrawCall_0116 1
+    2300066: DrawCall_0117
+    2300068: DrawCall_0117 1
+    2300070: DrawCall_0118
+    2300072: DrawCall_0118 1
+    2300074: DrawCall_0119
+    2300076: DrawCall_0120
+    2300078: DrawCall_0121
+    2300080: DrawCall_0125
+    2300082: DrawCall_0128
+    2300084: DrawCall_0142
+    2300086: DrawCall_0144
+    2300088: DrawCall_0145
+    2300090: DrawCall_0146
+    3300000: Cylinder002
+    3300002: Cylinder003
+    3300004: DrawCall_0004
+    3300006: DrawCall_0008
+    3300008: DrawCall_0009
+    3300010: DrawCall_0013
+    3300012: DrawCall_0014
+    3300014: DrawCall_0015
+    3300016: DrawCall_0019
+    3300018: DrawCall_0021
+    3300020: DrawCall_0022
+    3300022: DrawCall_0022 1
+    3300024: DrawCall_0023
+    3300026: DrawCall_0027
+    3300028: DrawCall_0028
+    3300030: DrawCall_0029
+    3300032: DrawCall_0031
+    3300034: DrawCall_0032
+    3300036: DrawCall_0034
+    3300038: DrawCall_0035
+    3300040: DrawCall_0078
+    3300042: DrawCall_0085
+    3300044: DrawCall_0086
+    3300046: DrawCall_0092
+    3300048: DrawCall_0101
+    3300050: DrawCall_0101 1
+    3300052: DrawCall_0102
+    3300054: DrawCall_0103
+    3300056: DrawCall_0105
+    3300058: DrawCall_0106
+    3300060: DrawCall_0108
+    3300062: DrawCall_0116
+    3300064: DrawCall_0116 1
+    3300066: DrawCall_0117
+    3300068: DrawCall_0117 1
+    3300070: DrawCall_0118
+    3300072: DrawCall_0118 1
+    3300074: DrawCall_0119
+    3300076: DrawCall_0120
+    3300078: DrawCall_0121
+    3300080: DrawCall_0125
+    3300082: DrawCall_0128
+    3300084: DrawCall_0142
+    3300086: DrawCall_0144
+    3300088: DrawCall_0145
+    3300090: DrawCall_0146
+    4300000: DrawCall_0144
+    4300002: DrawCall_0004
+    4300004: DrawCall_0014
+    4300006: DrawCall_0015
+    4300008: DrawCall_0019
+    4300010: DrawCall_0021
+    4300012: DrawCall_0022
+    4300014: DrawCall_0028
+    4300016: DrawCall_0029
+    4300018: DrawCall_0031
+    4300020: DrawCall_0032
+    4300022: DrawCall_0034
+    4300024: DrawCall_0035
+    4300026: DrawCall_0142
+    4300028: DrawCall_0092
+    4300030: DrawCall_0145
+    4300032: DrawCall_0101
+    4300034: DrawCall_0102
+    4300036: DrawCall_0105
+    4300038: DrawCall_0106
+    4300040: DrawCall_0108
+    4300042: DrawCall_0116
+    4300044: DrawCall_0117
+    4300046: DrawCall_0118
+    4300048: DrawCall_0121
+    4300050: DrawCall_0125
+    4300052: DrawCall_0128
+    4300054: DrawCall_0146
+    4300056: DrawCall_0116
+    4300058: DrawCall_0117
+    4300060: DrawCall_0118
+    4300062: DrawCall_0119
+    4300064: DrawCall_0120
+    4300066: DrawCall_0008
+    4300068: DrawCall_0009
+    4300070: DrawCall_0027
+    4300072: DrawCall_0023
+    4300074: DrawCall_0086
+    4300076: DrawCall_0085
+    4300078: DrawCall_0022
+    4300080: DrawCall_0078
+    4300082: DrawCall_0101
+    4300084: DrawCall_0013
+    4300086: DrawCall_0103
+    4300088: Cylinder002
+    4300090: Cylinder003
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

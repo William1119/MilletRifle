@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RECORDS Ver="">
+<RECORD Id="101" Name="M3斯图亚特" Type="LT" ResPath="Tank/LT/M3Stewart" Level="3" Hp="240" Pierce="78" Damage="50" RateFire="26.09" Armor="38" Speed="61" />
+<RECORD Id="102" Name="苏联BT" Type="LT" ResPath="Tank/LT/BT" Level="3" Hp="235" Pierce="92" Damage="50" RateFire="28.57" Armor="20" Speed="50" />
+<RECORD Id="201" Name="M3格兰特（李）" Type="MT" ResPath="Tank/MT/M3Grant" Level="4" Hp="310" Pierce="127" Damage="175" RateFire="20" Armor="50" Speed="38" />
+<RECORD Id="202" Name="M4A1谢尔曼" Type="MT" ResPath="Tank/MT/M4A1Sherman" Level="5" Hp="460" Pierce="177" Damage="185" RateFire="12.5" Armor="63" Speed="48" />
+<RECORD Id="203" Name="M4A3谢尔曼" Type="MT" ResPath="Tank/MT/M4A3Sherman" Level="6" Hp="760" Pierce="177" Damage="185" RateFire="18.18" Armor="76" Speed="48" />
+<RECORD Id="204" Name="豹式坦克" Type="MT" ResPath="Tank/MT/Panther" Level="7" Hp="1270" Pierce="244" Damage="175" RateFire="13.04" Armor="120" Speed="55" />
+<RECORD Id="205" Name="3号坦克" Type="MT" ResPath="Tank/MT/Pz-Kpfw-III" Level="4" Hp="350" Pierce="130" Damage="90" RateFire="24" Armor="70" Speed="64" />
+<RECORD Id="206" Name="T-34" Type="MT" ResPath="Tank/MT/T-34" Level="5" Hp="450" Pierce="189" Damage="165" RateFire="10.53" Armor="52" Speed="56" />
+<RECORD Id="207" Name="V-IV号坦克" Type="MT" ResPath="Tank/MT/V-IV" Level="5" Hp="520" Pierce="158" Damage="175" RateFire="15.77" Armor="85" Speed="55" />
+<RECORD Id="208" Name="III-IV号" Type="MT" ResPath="Tank/MT/III-IV" Level="5" Hp="440" Pierce="158" Damage="175" RateFire="13.95" Armor="60" Speed="55" />
+<RECORD Id="301" Name="KV-1" Type="HT" ResPath="Tank/HT/KV-1" Level="5" Hp="640" Pierce="161" Damage="280" RateFire="12" Armor="110" Speed="34" />
+<RECORD Id="302" Name="IS-2柏林" Type="HT" ResPath="Tank/HT/IS-2" Level="7" Hp="1280" Pierce="217" Damage="530" RateFire="4.88" Armor="100" Speed="34" />
+<RECORD Id="303" Name="虎式" Type="HT" ResPath="Tank/HT/Tiger" Level="7" Hp="1500" Pierce="237" Damage="295" RateFire="8.96" Armor="100" Speed="40" />
+<RECORD Id="401" Name="黄蜂榴弹炮" Type="SPG" ResPath="Tank/SPG/Wespe" Level="3" Hp="130" Pierce="104" Damage="410" RateFire="3" Armor="30" Speed="40" />
+<RECORD Id="402" Name="M8自行榴弹炮" Type="SPG" ResPath="Tank/SPG/M8" Level="3" Hp="140" Pierce="101" Damage="410" RateFire="3" Armor="101" Speed="38" />
+<RECORD Id="403" Name="M41" Type="SPG" ResPath="Tank/SPG/M41" Level="5" Hp="230" Pierce="240" Damage="700" RateFire="2.4" Armor="12" Speed="56" />
+<RECORD Id="404" Name="SU-122" Type="SPG" ResPath="Tank/SPG/SU-122" Level="5" Hp="210" Pierce="250" Damage="910" RateFire="1.9" Armor="25" Speed="30" />
+<RECORD Id="405" Name="蟋蟀自走炮" Type="SPG" ResPath="Tank/SPG/Grille" Level="6" Hp="240" Pierce="185" Damage="689" RateFire="2.55" Armor="15" Speed="42" />
+<RECORD Id="501" Name="SU76" Type="TD" ResPath="Tank/TD/SU-76" Level="3" Hp="155" Pierce="189" Damage="95" RateFire="18.75" Armor="25" Speed="48" />
+<RECORD Id="502" Name="追猎者" Type="TD" ResPath="Tank/TD/Jagdpanzer" Level="4" Hp="270" Pierce="104" Damage="410" RateFire="6.98" Armor="60" Speed="42" />
+<RECORD Id="503" Name="SU-85" Type="TD" ResPath="Tank/TD/SU-85" Level="5" Hp="350" Pierce="195" Damage="300" RateFire="10" Armor="45" Speed="55" />
+<RECORD Id="504" Name="4号坦克歼击车" Type="TD" ResPath="Tank/TD/StuGIV" Level="6" Hp="600" Pierce="171" Damage="270" RateFire="11.11" Armor="80" Speed="40" />
+<RECORD Id="505" Name="M18地狱猫" Type="TD" ResPath="Tank/TD/M18Hellcat" Level="6" Hp="570" Pierce="243" Damage="320" RateFire="7.06" Armor="76" Speed="70" />
+<RECORD Id="506" Name="SU-122-54" Type="TD" ResPath="Tank/TD/SU-122-54" Level="9" Hp="1530" Pierce="340" Damage="530" RateFire="6.52" Armor="100" Speed="48" />
+<RECORD Id="601" Name="OT130喷火坦克" Type="TS" ResPath="Tank/TS/OT130" Level="5" Hp="500" Pierce="20" Damage="100" RateFire="60" Armor="38" Speed="51" />
+<RECORD Id="602" Name="T34希神多管火箭炮" Type="TS" ResPath="Tank/TS/T34Calliope" Level="9" Hp="1200" Pierce="100" Damage="200" RateFire="60" Armor="52" Speed="40" />
+</RECORDS>

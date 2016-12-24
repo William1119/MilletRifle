@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RECORDS Ver="">
+<RECORD Id="101" Name="AK-47" Type="步枪" ResPath="Weapons/422/422wq_2" Damage="36" RateFire="10" Clip="30" ReloadTime=".8" Recoil=".02" GunRange="22" Pierce="77.5" FlySpeed="50" Block="2" Desc="强大又可靠，AK-47是世上最流行的突击步枪之一，近距离内控制好的短点射击极为致命。" />
+</RECORDS>

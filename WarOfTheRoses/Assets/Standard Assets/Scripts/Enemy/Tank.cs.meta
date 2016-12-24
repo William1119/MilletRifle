@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f09923aeba13f7244ab4c9a962607a47
+timeCreated: 1478144044
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - Hp_red: {fileID: 2800000, guid: 45ad1e7034d8a22468c4ced32bf9c748, type: 3}
+  - Hp_black: {fileID: 2800000, guid: 7beb93d512680604381f8587c717a6a3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
