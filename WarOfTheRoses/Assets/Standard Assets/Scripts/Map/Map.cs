@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Xml;
 using System.Collections.Generic;
 
 public class Map : MonoBehaviour
@@ -387,7 +386,7 @@ public class Map : MonoBehaviour
                 {
                     GameObject enemy = Instantiate(enemy_Prefab, new Vector3((float)enemy_spawn[i].z * 1.5f + 0.5f, transform.position.y + 0.5f, enemy_spawn[i].x * 1.5f - 0.5f), transform.rotation) as GameObject;
                     enemy.AddComponent<Hero>().heroData = LoadXml.rolesData[102];
-                    enemy.AddComponent<RobotAI>(); //AI
+                    //enemy.AddComponent<RobotAI>(); //AI
                     //enemy.AddComponent<Tank>().carriersData = LoadXml.carriersData[102];
                     //enemy.AddComponent<EnemyTank_AI_1>(); //敌军士兵AI
                     enemy.AddComponent<MoveController>();

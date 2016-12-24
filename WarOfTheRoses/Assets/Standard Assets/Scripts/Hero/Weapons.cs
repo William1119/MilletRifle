@@ -60,7 +60,8 @@ public class Weapons : MonoBehaviour
 
         clipShow = GameObject.Find("Canvas/ReloadClip/Clip").GetComponent<Text>(); //弹夹显示
         clip = weaponData.Clip;
-        clipShow.text = weaponData.Clip.ToString();
+        if (!isAI)
+            clipShow.text = weaponData.Clip.ToString();
         clipReloadTime = GameObject.Find("Canvas/ReloadClip/ReloadTime").GetComponent<Text>(); //弹夹装填时间显示
         _rateFire = 1 / weaponData.RateFire;
     }
@@ -78,6 +79,8 @@ public class Weapons : MonoBehaviour
 
     void Hot() //武器准星变大
     {
+        if (isAI)
+            return;
         frontSightRange += weaponData.Recoil; //后坐力准星扩大
         if (frontSightRange > frontSightMax)
             frontSightRange = frontSightMax;
@@ -150,16 +153,18 @@ public class Weapons : MonoBehaviour
         bulletScript.bulletData.FlyDistance = weaponData.GunRange;
         Hot(); //武器准星变大
         clip--;
-        clipShow.text = clip.ToString();
+        if (!isAI)
+            clipShow.text = clip.ToString();
         if (clip <= 0)
             CallReloadClip(); //重新填装子弹
     }
 
+    Object enemy_BulletPrefab = Resources.Load("Bullet/Enemy_Bullet"); //加载子弹容器
     public void Fire(Transform target) //射击
     {
         lastAttackTime = Time.time;
         shootPoint.LookAt(new Vector3(target.position.x + Random.Range(-frontSightRange, frontSightRange), target.position.y + Random.Range(-frontSightRange, frontSightRange), target.position.z + Random.Range(-frontSightRange, frontSightRange)));
-        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation) as GameObject;
+        GameObject bullet = Instantiate(enemy_BulletPrefab, shootPoint.position, shootPoint.transform.rotation) as GameObject;
         GameObject effect = Instantiate(bulletEffectPrefab, bullet.transform.position, bullet.transform.rotation) as GameObject;
         effect.transform.parent = bullet.transform;
         Bullet bulletScript = bullet.AddComponent<Bullet>();
@@ -170,7 +175,8 @@ public class Weapons : MonoBehaviour
         bulletScript.bulletData.FlyDistance = weaponData.GunRange;
         Hot(); //武器准星变大
         clip--;
-        clipShow.text = clip.ToString();
+        if (!isAI)
+            clipShow.text = clip.ToString();
         if (clip <= 0)
             CallReloadClip(); //重新填装子弹
     }
@@ -222,9 +228,11 @@ public class Weapons : MonoBehaviour
             return;
         reloadTime = weaponData.ReloadTime;
         clip = 0;
-        clipShow.text = clip.ToString();
+        if (!isAI)
+            clipShow.text = clip.ToString();
         reloading = true;
-        clipReloadTime.enabled = true;
+        if (!isAI)
+            clipReloadTime.enabled = true;
     }
 
     void ReloadClip() //重新填装子弹
@@ -232,14 +240,17 @@ public class Weapons : MonoBehaviour
         if (reloadTime > 0)
         {
             reloadTime -= Time.deltaTime;
-            clipReloadTime.text = reloadTime.ToString("0.0");
+            if (!isAI)
+                clipReloadTime.text = reloadTime.ToString("0.0");
         }
         if (reloadTime <= 0 && reloading)
         {
             clip = weaponData.Clip;
-            clipShow.text = clip.ToString();
+            if (!isAI)
+                clipShow.text = clip.ToString();
             reloading = false;
-            clipReloadTime.enabled = false;
+            if (!isAI)
+                clipReloadTime.enabled = false;
         }
     }
 

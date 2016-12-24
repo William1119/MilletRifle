@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class RobotAI : MonoBehaviour {
-    public Transform target;
+    Transform target;
 
     Hero enemy;
     float updataTime = 0;
@@ -10,20 +10,20 @@ public class RobotAI : MonoBehaviour {
     float _angle;
 
     void Start () {
-        enemy = GetComponent<Hero>();
+        enemy = transform.parent.GetComponent<Hero>();
         _direction = enemy.DOWN;
         _angle = 180;
     }
 	
 	void Update () {
         updataTime += Time.deltaTime; //计时
+
+        if (triggerTime + 0.1f < Time.time)
+            target = null;
         if (updataTime >= 0.1)
         {
             if (target)
             {
-                _direction = (target.position - transform.position).normalized;
-                _direction = new Vector3(_direction.x, 0, _direction.y);
-                _angle = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg;
                 enemy.UseSkill("Attack",target);
             }
         }
@@ -55,9 +55,19 @@ public class RobotAI : MonoBehaviour {
                     _direction = enemy.RIGHT;
                     _angle = 90;
                 }
+                enemy.SetDirection(_angle);
             }
         }
         enemy.Move(_direction);
-        enemy.SetDirection(_angle);
+    }
+
+    float triggerTime = 0;
+    void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "P1" || other.tag == "Enemy")
+        {
+            target = other.transform;
+            triggerTime = Time.time;
+        }
     }
 }
