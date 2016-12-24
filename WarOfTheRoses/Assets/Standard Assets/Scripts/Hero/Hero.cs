@@ -44,6 +44,7 @@ public class Hero : MonoBehaviour
         heroSkin.transform.parent = transform;
         heroSkinRenderer = heroSkin.GetComponent<Renderer>();
         heroAnimation = heroSkin.GetComponent<Animation>();
+        heroAnimation.CrossFade("battlestand", 0.1f);
 
         camera1 = Camera.main;
 
@@ -100,7 +101,10 @@ public class Hero : MonoBehaviour
                 heroSkinRenderer.enabled = true; //解除伪装
             }
 
-            if (!heroAnimation.isPlaying)
+            if (moveTime + 0.1f >= Time.time)
+                if(!heroAnimation.isPlaying || heroAnimation.IsPlaying("battlestand"))
+                    heroAnimation.CrossFade("battlerun", 0.1f);
+            else if (!heroAnimation.isPlaying || heroAnimation.IsPlaying("battlerun"))
                 heroAnimation.CrossFade("battlestand", 0.1f);
         }
 
@@ -274,6 +278,7 @@ public class Hero : MonoBehaviour
     }
 
     string moveMode = "";
+    float moveTime = 0;
     public void Move(Vector3 point) //移动
     {
         if (ladderTime > 0)
@@ -284,6 +289,7 @@ public class Hero : MonoBehaviour
         if (moveSpeed < 0)
             moveSpeed = 0;
         moveController.Move(transform.TransformDirection(point), moveSpeed, moveMode);
+        moveTime = Time.time;
     }
 
     public void SetDirection(Vector3 point) //转向

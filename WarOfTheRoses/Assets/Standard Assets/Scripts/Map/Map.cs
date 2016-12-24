@@ -152,8 +152,7 @@ public class Map : MonoBehaviour
         missionRun = true;
         mission_RunTime = 0; //关卡运行时间
         mission = 1; //限定为第一关
-        //Mission_Map(LoadXml.LoadXml_Map("Map001")); //开始关卡
-        LoadXml.LoadXml_Map("Map001");
+        Mission_Map(LoadXml.LoadXml_Map("Map001")); //开始关卡
     }
 
     void ClearMap() //清空地图
@@ -293,57 +292,57 @@ public class Map : MonoBehaviour
             {
                 if (map_layout[x, z] == 02 || map_layout[x, z] == 03)
                 {
-                    roadblock = Instantiate(wall_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.AddComponent<Roadblock>();
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(wall_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.AddComponent<Roadblock>();
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 04)
                 {
-                    roadblock = Instantiate(steel_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(steel_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 05)
                 {
-                    roadblock = Instantiate(river_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(river_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 06)
                 {
-                    roadblock = Instantiate(grass_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(grass_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 07)
                 {
-                    roadblock = Instantiate(ice_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(ice_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 08)
                 {
-                    roadblock = Instantiate(bog_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(bog_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 0.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 09)
                 {
-                    roadblock = Instantiate(wall_Ladder_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.AddComponent<Roadblock>();
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(wall_Ladder_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.AddComponent<Roadblock>();
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 10)
                 {
-                    roadblock = Instantiate(steel_Ladder_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(steel_Ladder_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 98)
                 {
-                    roadblock = Instantiate(home_Prefab, new Vector3((float)z * 1.5f + 0.75f, transform.position.y + 1.5f, line * 1.5f - 0.75f), transform.rotation) as GameObject;
-                    roadblock.transform.Rotate(new Vector3(0, 180, 0));
-                    roadblock.AddComponent<Roadblock>();
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(home_Prefab, new Vector3((float)z * 1.5f + 0.75f, transform.position.y + 1.5f, line * 1.5f - 0.75f), transform.rotation) as GameObject;
+                    //roadblock.transform.Rotate(new Vector3(0, 180, 0));
+                    //roadblock.AddComponent<Roadblock>();
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 00)
                 {
-                    roadblock = Instantiate(border_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
-                    roadblock.transform.parent = transform;
+                    //roadblock = Instantiate(border_Prefab, new Vector3((float)z * 1.5f, transform.position.y + 1.5f, line * 1.5f), transform.rotation) as GameObject;
+                    //roadblock.transform.parent = transform;
                 }
                 else if (map_layout[x, z] == 97)
                 {
@@ -387,9 +386,10 @@ public class Map : MonoBehaviour
                 if (Random.value * 100 + 1 <= 10 && enemy_number < 6 && enemy_count >= 1)
                 {
                     GameObject enemy = Instantiate(enemy_Prefab, new Vector3((float)enemy_spawn[i].z * 1.5f + 0.5f, transform.position.y + 0.5f, enemy_spawn[i].x * 1.5f - 0.5f), transform.rotation) as GameObject;
-                    //enemy.AddComponent<Hero>().heroData = LoadXml.rolesData[102];
-                    enemy.AddComponent<Tank>().carriersData = LoadXml.carriersData[102];
-                    enemy.AddComponent<EnemyTank_AI_1>(); //敌军士兵AI
+                    enemy.AddComponent<Hero>().heroData = LoadXml.rolesData[102];
+                    enemy.AddComponent<RobotAI>(); //AI
+                    //enemy.AddComponent<Tank>().carriersData = LoadXml.carriersData[102];
+                    //enemy.AddComponent<EnemyTank_AI_1>(); //敌军士兵AI
                     enemy.AddComponent<MoveController>();
                     enemy_number++;
                     enemy_count--;
