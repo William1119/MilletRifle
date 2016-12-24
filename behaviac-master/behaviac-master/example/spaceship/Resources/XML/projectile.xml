@@ -1,3 +1,0 @@
-  <Entity name="Projectile" isPlayer="false">
-    <BaseImage current_angle="0"  pictureSource="Resources\Ammo\bomb.png" scale="20" id="bomb"/>
-  </Entity>
