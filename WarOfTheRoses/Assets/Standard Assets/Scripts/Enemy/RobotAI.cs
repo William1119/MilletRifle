@@ -25,6 +25,7 @@ public class RobotAI : MonoBehaviour {
             if (target)
             {
                 updataTime = 0;
+                enemy.SetDirection(target.position);
                 enemy.UseSkill("Attack",target);
             }
         }
