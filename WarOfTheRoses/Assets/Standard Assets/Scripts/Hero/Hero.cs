@@ -102,8 +102,10 @@ public class Hero : MonoBehaviour
             }
 
             if (moveTime + 0.1f >= Time.time)
-                if(!heroAnimation.isPlaying || heroAnimation.IsPlaying("battlestand"))
+            {
+                if (!heroAnimation.isPlaying || heroAnimation.IsPlaying("battlestand"))
                     heroAnimation.CrossFade("battlerun", 0.1f);
+            }
             else if (!heroAnimation.isPlaying || heroAnimation.IsPlaying("battlerun"))
                 heroAnimation.CrossFade("battlestand", 0.1f);
         }
