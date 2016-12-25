@@ -108,7 +108,6 @@ public class Weapons : MonoBehaviour
             redLine.SetPosition(0, shootPoint.position);
             if (MyJoystack2.hitTarget.transform)
             {
-                Debug.Log(MyJoystack2.hitTarget.transform);
                 if (Physics.Raycast(shootPoint.position, MyJoystack2.hitTarget.point - shootPoint.position, out redHit, mask))
                 {
                     redPoint = redHit.point;

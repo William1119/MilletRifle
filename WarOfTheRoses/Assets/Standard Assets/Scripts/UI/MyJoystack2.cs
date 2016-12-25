@@ -116,8 +116,7 @@ public class MyJoystack2 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
 
             Ray ray = Camera.main.ScreenPointToRay(frontSight.transform.position);
-            Physics.Raycast(ray, out hitTarget,8192);
-            Debug.Log(hitTarget.transform);
+            Physics.Raycast(ray, out hitTarget);
             //if (Physics.Raycast(ray, out hitTarget))
             //    hero.SetDirection(hitTarget.point);
         }
