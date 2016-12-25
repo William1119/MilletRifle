@@ -20,10 +20,11 @@ public class RobotAI : MonoBehaviour {
 
         if (triggerTime + 0.1f < Time.time)
             target = null;
-        if (updataTime >= 0.1)
+        if (updataTime >= 0.2f)
         {
             if (target)
             {
+                updataTime = 0;
                 enemy.UseSkill("Attack",target);
             }
         }

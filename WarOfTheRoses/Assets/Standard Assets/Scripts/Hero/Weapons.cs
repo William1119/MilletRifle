@@ -106,8 +106,9 @@ public class Weapons : MonoBehaviour
         {
             redLine_renderer.material.mainTextureOffset += new Vector2(-Time.deltaTime * 0.5f, 0);
             redLine.SetPosition(0, shootPoint.position);
-            if (MyJoystack2.hitTarget.transform != null)
+            if (MyJoystack2.hitTarget.transform)
             {
+                Debug.Log(MyJoystack2.hitTarget.transform);
                 if (Physics.Raycast(shootPoint.position, MyJoystack2.hitTarget.point - shootPoint.position, out redHit, mask))
                 {
                     redPoint = redHit.point;
@@ -170,7 +171,7 @@ public class Weapons : MonoBehaviour
         Bullet bulletScript = bullet.AddComponent<Bullet>();
         bulletScript.hitEffectPrefab = bulletHitEffectPrefab;
         bulletScript.bulletData.Pierce = weaponData.Pierce;
-        bulletScript.bulletData.Damage = weaponData.Damage;
+        bulletScript.bulletData.Damage = weaponData.Damage*0.1f;
         bulletScript.bulletData.FlySpeed = weaponData.FlySpeed;
         bulletScript.bulletData.FlyDistance = weaponData.GunRange;
         Hot(); //武器准星变大
