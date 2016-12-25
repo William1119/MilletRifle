@@ -294,6 +294,19 @@ public class Hero : MonoBehaviour
         moveTime = Time.time;
     }
 
+    public void heroSkinMove(Vector3 point) //移动
+    {
+        if (ladderTime > 0)
+            moveMode = "Ladder";
+        else
+            moveMode = "";
+        float moveSpeed = heroData.MoveSpeed + changeSpeed;
+        if (moveSpeed < 0)
+            moveSpeed = 0;
+        moveController.Move(heroSkin.transform.TransformDirection(point), moveSpeed, moveMode);
+        moveTime = Time.time;
+    }
+
     public void SetDirection(Vector3 point) //转向
     {
         heroSkin.transform.LookAt(point);
