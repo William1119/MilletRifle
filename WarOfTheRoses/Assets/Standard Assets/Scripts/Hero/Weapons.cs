@@ -99,7 +99,7 @@ public class Weapons : MonoBehaviour
 
     public Vector3 redPoint = Vector3.zero;
     RaycastHit redHit = new RaycastHit();
-    int mask = LayerMask.GetMask("P1_Bullet");
+    
     public void RedLine() //红外线
     {
         if (redLineON && !isAI)
@@ -108,8 +108,10 @@ public class Weapons : MonoBehaviour
             redLine.SetPosition(0, shootPoint.position);
             if (MyJoystack2.hitTarget.transform)
             {
-                if (Physics.Raycast(shootPoint.position, MyJoystack2.hitTarget.point - shootPoint.position, out redHit, mask))
+                int mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemy");
+                if (Physics.Raycast(shootPoint.position,MyJoystack2.hitTarget.point - shootPoint.position, out redHit,25 ,mask))
                 {
+                    Debug.Log(redHit.transform);
                     redPoint = redHit.point;
                 }
                 else
