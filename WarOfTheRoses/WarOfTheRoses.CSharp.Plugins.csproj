@@ -136,6 +136,7 @@
     <None Include="Assets\Resources\Shaders\disintegrate_nmp.shader" />
     <None Include="Assets\Resources\Shaders\ghost.shader" />
     <None Include="Assets\Resources\Shaders\ghost_diffuse.shader" />
+    <None Include="Assets\Shader\alphaculloff.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
