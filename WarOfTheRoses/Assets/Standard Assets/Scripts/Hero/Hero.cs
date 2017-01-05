@@ -72,7 +72,10 @@ public class Hero : MonoBehaviour
         audioSource[1].clip = audioClip_Move;
 
         weapon = heroSkin.AddComponent<Weapons>();
-        weapon._weaponID = 101;
+        if (isAI)
+            weapon._weaponID = 101;
+        else
+            weapon._weaponID = 102;
         weapon._bindPoint = "Dummy_WuQi";
         weapon._frontSight = GameObject.Find("Canvas/Joystack2/FrontSight").transform; //准星
         weapon.isAI = isAI;

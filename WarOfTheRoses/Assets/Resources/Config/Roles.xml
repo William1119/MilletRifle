@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RECORDS Ver="">
-<RECORD Id="101" Name="娜塔莎" ResPath="Hero/422/Skin1" Hp="200" Armor="30" MoveSpeed="380" Desc="女枪手" />
+<RECORD Id="101" Name="娜塔莎" ResPath="Hero/422/Skin3" Hp="200" Armor="30" MoveSpeed="380" Desc="女枪手" />
 <RECORD Id="102" Name="多米诺" ResPath="Hero/422/Skin2" Hp="200" Armor="30" MoveSpeed="380" Desc="女枪手" />
 </RECORDS>

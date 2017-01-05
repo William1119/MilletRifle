@@ -104,8 +104,8 @@ public class Weapons : MonoBehaviour
     {
         if (redLineON && !isAI)
         {
-            redLine_renderer.material.mainTextureOffset += new Vector2(-Time.deltaTime * 0.5f, 0);
-            redLine.SetPosition(0, shootPoint.position);
+            //redLine_renderer.material.mainTextureOffset += new Vector2(-Time.deltaTime * 0.5f, 0);
+            //redLine.SetPosition(0, shootPoint.position);
             if (MyJoystack2.hitTarget.transform)
             {
                 int mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemy");
@@ -119,7 +119,7 @@ public class Weapons : MonoBehaviour
             }
             else
                 redPoint = shootPoint.position + Vector3.forward * weaponData.GunRange;
-            redLine.SetPosition(1, redPoint);
+            //redLine.SetPosition(1, redPoint);
         }
     }
 
