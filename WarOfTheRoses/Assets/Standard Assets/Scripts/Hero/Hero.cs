@@ -45,6 +45,8 @@ public class Hero : MonoBehaviour
         heroSkinRenderer = heroSkin.GetComponent<Renderer>();
         heroAnimation = heroSkin.GetComponent<Animation>();
         heroAnimation.CrossFade("battlestand", 0.1f);
+        heroAnimation["attack3"].speed = 1.5f;
+        heroAnimation["attack1_1"].speed = 1.5f;
 
         camera1 = Camera.main;
 
@@ -244,9 +246,9 @@ public class Hero : MonoBehaviour
     {
         ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
         skillProtectTime = 0.8f;
-        weapon.RPG();
         heroAnimation.Stop();
-        heroAnimation.CrossFade("attack1_2", 0.1f);
+        heroAnimation.CrossFade("attack1_1", 0.1f);
+        weapon.RPG();
         audioSource[0].clip = audioClip_RPG;
         audioSource[0].Play();
     }
@@ -260,7 +262,6 @@ public class Hero : MonoBehaviour
     {
         skillProtectTime = 0.6f;
         heroAnimation.Stop();
-        heroAnimation["attack3"].speed = 2f;
         heroAnimation.CrossFade("attack3", 0.1f);
         startPosition = transform.position;
         lastChargeTime = Time.time;
