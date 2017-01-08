@@ -101,7 +101,7 @@ public class MyJoystack2 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
                 if (_turnBase && dis >= ActiveMoveDistance) //移动
                 {
-                    Vector3 pos = frontSightOrigin + (center.transform.localPosition - Origin) * 5; //准星移动，5倍
+                    Vector3 pos = frontSightOrigin + (center.transform.localPosition - Origin) * 4; //准星移动，4倍
                     if (pos.x > Screen.width / 2) pos.x = Screen.width / 2;
                     if (pos.x < -Screen.width / 2) pos.x = -Screen.width / 2;
                     if (pos.y > Screen.height / 2) pos.y = Screen.height / 2;

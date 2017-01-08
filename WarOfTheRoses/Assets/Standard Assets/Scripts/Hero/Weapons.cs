@@ -111,7 +111,6 @@ public class Weapons : MonoBehaviour
                 int mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemy");
                 if (Physics.Raycast(shootPoint.position,MyJoystack2.hitTarget.point - shootPoint.position, out redHit,25 ,mask))
                 {
-                    Debug.Log(redHit.transform);
                     redPoint = redHit.point;
                 }
                 else

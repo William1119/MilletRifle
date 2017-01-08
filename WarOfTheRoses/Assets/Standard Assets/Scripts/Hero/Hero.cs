@@ -49,8 +49,23 @@ public class Hero : MonoBehaviour
         heroAnimation["attack1_1"].speed = 1.5f;
 
         camera1 = Camera.main;
+        string sliderPrefab = "";
+        if (isAI)
+        {
+            int rnd = (int)(Random.value * 100);
+            if (rnd <= 25)
+                sliderPrefab = "UI/HP_Slider_02";
+            else if (rnd <= 50)
+                sliderPrefab = "UI/HP_Slider_03";
+            else if (rnd <= 75)
+                sliderPrefab = "UI/HP_Slider_04";
+            else
+                sliderPrefab = "UI/HP_Slider_05";
+        }
+        else
+            sliderPrefab = "UI/HP_Slider_01";
 
-        Object HP_SliderPrefab = Resources.Load("UI/HP_Slider"); //加载血条
+        Object HP_SliderPrefab = Resources.Load(sliderPrefab); //加载血条
         Transform canvas = GameObject.Find("Canvas").transform;
         HP_Slider = Instantiate(HP_SliderPrefab, canvas.position, canvas.rotation) as GameObject;
         HP_Slider.transform.SetParent(canvas);
