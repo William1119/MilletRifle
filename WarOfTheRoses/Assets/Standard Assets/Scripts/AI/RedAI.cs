@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RobotAI : MonoBehaviour {
+public class RedAI : MonoBehaviour {
     Transform target;
 
     Hero enemy;
@@ -62,7 +62,7 @@ public class RobotAI : MonoBehaviour {
     float triggerTime = 0;
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "P1" || other.tag == "Enemy")
+        if (other.tag == "Enemy")
         {
             target = other.transform;
             triggerTime = Time.time;
