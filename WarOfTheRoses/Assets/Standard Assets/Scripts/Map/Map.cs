@@ -468,7 +468,7 @@ public class Map : MonoBehaviour
                 }
                 Hero hero = redAI.AddComponent<Hero>();
                 hero.heroData = LoadXml.rolesData[101]; //娜塔莎
-                hero.isAI = false;
+                //hero.isAI = false;
                 redAI.AddComponent<MoveController>();
                 redAI_number++;
                 redAI_count--;

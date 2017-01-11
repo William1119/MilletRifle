@@ -43,8 +43,10 @@ public class Bullet : MonoBehaviour
                 carriers.carriersData.Hp -= (int)(bulletData.Damage - (carriers.carriersData.Armor - bulletData.Pierce));
             carriers.showHP_SliderTime = 1.5f;
         }
-        else if (other.tag == "P1" || other.tag == "Enemy")
+        else if (other.tag == "P1" || other.tag == "Enemy" || other.tag == "RedAI")
         {
+            if (other.tag == "P1")
+                bulletData.Damage *= 0.1f;
             Hero hero = other.gameObject.GetComponent<Hero>();
             if (bulletData.Pierce > hero.heroData.Armor)
                 hero.heroData.Hp -= (int)bulletData.Damage;

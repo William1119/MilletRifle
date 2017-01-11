@@ -52,15 +52,20 @@ public class Hero : MonoBehaviour
         string sliderPrefab = "";
         if (isAI)
         {
-            int rnd = (int)(Random.value * 100);
-            if (rnd <= 25)
-                sliderPrefab = "UI/HP_Slider_02";
-            else if (rnd <= 50)
-                sliderPrefab = "UI/HP_Slider_03";
-            else if (rnd <= 75)
-                sliderPrefab = "UI/HP_Slider_04";
+            if (heroData.Id == 101)
+                sliderPrefab = "UI/HP_Slider_011";
             else
-                sliderPrefab = "UI/HP_Slider_05";
+            {
+                int rnd = (int)(Random.value * 100);
+                if (rnd <= 25)
+                    sliderPrefab = "UI/HP_Slider_02";
+                else if (rnd <= 50)
+                    sliderPrefab = "UI/HP_Slider_03";
+                else if (rnd <= 75)
+                    sliderPrefab = "UI/HP_Slider_04";
+                else
+                    sliderPrefab = "UI/HP_Slider_05";
+            }
         }
         else
             sliderPrefab = "UI/HP_Slider_01";
@@ -89,7 +94,7 @@ public class Hero : MonoBehaviour
         audioSource[1].clip = audioClip_Move;
 
         weapon = heroSkin.AddComponent<Weapons>();
-        if (isAI)
+        if (heroData.Id == 102)
             weapon._weaponID = 101;
         else
             weapon._weaponID = 102;
@@ -181,10 +186,11 @@ public class Hero : MonoBehaviour
         else if (skillName == "TripleShot")
             TripleShot(); //三发连射
         else if (skillName == "Attack")
-            if (target)
-                Attack(target); //攻击
-            else
-                Attack(); //攻击
+            Attack(); //攻击
+        else if (skillName == "RedAIAttack")
+            RedAIAttack(target); //攻击
+        else if (skillName == "BlueAIAttack")
+            BlueAIAttack(target); //攻击
         else if (skillName == "Charge")
             UseCharge(); //冲锋
         else if (skillName == "ReloadClip")
@@ -205,14 +211,28 @@ public class Hero : MonoBehaviour
         }
     }
 
-    void Attack(Transform target) //攻击
+    void RedAIAttack(Transform target) //红方AI攻击
     {
         if (weapon.IsCanFire())
         {
             ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
-            weapon.Fire(target); //武器射击
+            weapon.RedAIFire(target); //武器射击
+            audioSource[0].clip = audioClip_Gun;
+            if (!audioSource[0].isPlaying)
+                audioSource[0].Play();
+        }
+    }
+
+    void BlueAIAttack(Transform target) //蓝方AI攻击
+    {
+        if (weapon.IsCanFire())
+        {
+            ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
+            heroAnimation.Stop();
+            heroAnimation.CrossFade("attack1_1", 0.1f);
+            weapon.BlueAIFire(target); //武器射击
             audioSource[0].clip = audioClip_Gun;
             if (!audioSource[0].isPlaying)
                 audioSource[0].Play();

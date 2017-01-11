@@ -26,7 +26,7 @@ public class BlueAI : MonoBehaviour {
             {
                 updataTime = 0;
                 enemy.SetDirection(target.position);
-                enemy.UseSkill("Attack",target);
+                enemy.UseSkill("BlueAIAttack", target);
             }
         }
 

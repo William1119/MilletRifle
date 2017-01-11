@@ -160,8 +160,29 @@ public class Weapons : MonoBehaviour
             CallReloadClip(); //重新填装子弹
     }
 
+    public void RedAIFire(Transform target) //射击
+    {
+        lastAttackTime = Time.time;
+        shootPoint.LookAt(new Vector3(target.position.x + Random.Range(-frontSightRange, frontSightRange), target.position.y + Random.Range(-frontSightRange, frontSightRange), target.position.z + Random.Range(-frontSightRange, frontSightRange)));
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation) as GameObject;
+        GameObject effect = Instantiate(bulletEffectPrefab, bullet.transform.position, bullet.transform.rotation) as GameObject;
+        effect.transform.parent = bullet.transform;
+        Bullet bulletScript = bullet.AddComponent<Bullet>();
+        bulletScript.hitEffectPrefab = bulletHitEffectPrefab;
+        bulletScript.bulletData.Pierce = weaponData.Pierce;
+        bulletScript.bulletData.Damage = weaponData.Damage;
+        bulletScript.bulletData.FlySpeed = weaponData.FlySpeed;
+        bulletScript.bulletData.FlyDistance = weaponData.GunRange;
+        Hot(); //武器准星变大
+        clip--;
+        if (!isAI)
+            clipShow.text = clip.ToString();
+        if (clip <= 0)
+            CallReloadClip(); //重新填装子弹
+    }
+
     Object enemy_BulletPrefab = Resources.Load("Bullet/Enemy_Bullet"); //加载子弹容器
-    public void Fire(Transform target) //射击
+    public void BlueAIFire(Transform target) //射击
     {
         lastAttackTime = Time.time;
         shootPoint.LookAt(new Vector3(target.position.x + Random.Range(-frontSightRange, frontSightRange), target.position.y + Random.Range(-frontSightRange, frontSightRange), target.position.z + Random.Range(-frontSightRange, frontSightRange)));
@@ -171,7 +192,7 @@ public class Weapons : MonoBehaviour
         Bullet bulletScript = bullet.AddComponent<Bullet>();
         bulletScript.hitEffectPrefab = bulletHitEffectPrefab;
         bulletScript.bulletData.Pierce = weaponData.Pierce;
-        bulletScript.bulletData.Damage = weaponData.Damage*0.1f;
+        bulletScript.bulletData.Damage = weaponData.Damage;
         bulletScript.bulletData.FlySpeed = weaponData.FlySpeed;
         bulletScript.bulletData.FlyDistance = weaponData.GunRange;
         Hot(); //武器准星变大

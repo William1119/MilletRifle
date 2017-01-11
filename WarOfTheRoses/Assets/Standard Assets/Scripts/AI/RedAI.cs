@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class RedAI : MonoBehaviour {
     Transform target;
+    public List<Vector3> path; //AI路线
 
     Hero enemy;
     float updataTime = 0;
@@ -26,7 +28,7 @@ public class RedAI : MonoBehaviour {
             {
                 updataTime = 0;
                 enemy.SetDirection(target.position);
-                enemy.UseSkill("Attack",target);
+                enemy.UseSkill("RedAIAttack", target);
             }
         }
 
