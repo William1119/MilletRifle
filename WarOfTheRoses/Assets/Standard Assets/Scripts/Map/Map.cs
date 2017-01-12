@@ -128,6 +128,11 @@ public class Map : MonoBehaviour
         }
     }
 
+    public void RedAIDeath() //敌军阵亡
+    {
+        redAI_number--;
+    }
+
     public void P1Death() //p1阵亡
     {
         p1_number--;
