@@ -115,6 +115,8 @@ public class Hero : MonoBehaviour
             Map mapScript = GameObject.Find("Ground").GetComponent<Map>();
             if (gameObject.tag == "Enemy")
                 mapScript.EnemyDeath(); //敌军阵亡
+            else if (gameObject.tag == "RedAI")
+                redAI_number--; //红方AI阵亡
             else if (gameObject.tag == "P1")
                 mapScript.P1Death(); //p1阵亡
         }
