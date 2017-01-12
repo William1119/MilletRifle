@@ -128,6 +128,19 @@ public class Map : MonoBehaviour
         }
     }
 
+    public void RedAIDeath() //敌军阵亡
+    {
+        redAI_number--;
+        Info_Enemy.text = "敌军  ： " + (blueAI_count + blueAI_number);
+        if (blueAI_number == 0 && blueAI_count == 0)
+        {
+            Info_Center.text = "胜利！";
+            Info_Center.color = Color.yellow;
+            missionRun = false;
+            NextMission(); //进入下一关
+        }
+    }
+
     public void P1Death() //p1阵亡
     {
         p1_number--;

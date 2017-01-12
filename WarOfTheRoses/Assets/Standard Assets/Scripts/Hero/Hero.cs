@@ -115,6 +115,8 @@ public class Hero : MonoBehaviour
             Map mapScript = GameObject.Find("Ground").GetComponent<Map>();
             if (gameObject.tag == "Enemy")
                 mapScript.EnemyDeath(); //敌军阵亡
+            else if (gameObject.tag == "RedAI")
+                mapScript.RedAIDeath(); //红方AI阵亡
             else if (gameObject.tag == "P1")
                 mapScript.P1Death(); //p1阵亡
         }
@@ -173,9 +175,16 @@ public class Hero : MonoBehaviour
         }
     }
 
-    float skillProtectTime = 0;
+    public float skillProtectTime = 0;
     public void UseSkill(string skillName,Transform target)
     {
+        if (skillName == "Attack")
+            Attack(); //攻击
+        else if (skillName == "RedAIAttack")
+            RedAIAttack(target); //攻击
+        else if (skillName == "BlueAIAttack")
+            BlueAIAttack(target); //攻击
+
         if (skillProtectTime > 0) //技能保护检查
             return;
 
@@ -185,12 +194,6 @@ public class Hero : MonoBehaviour
             UseRPG(); //RPG
         else if (skillName == "TripleShot")
             TripleShot(); //三发连射
-        else if (skillName == "Attack")
-            Attack(); //攻击
-        else if (skillName == "RedAIAttack")
-            RedAIAttack(target); //攻击
-        else if (skillName == "BlueAIAttack")
-            BlueAIAttack(target); //攻击
         else if (skillName == "Charge")
             UseCharge(); //冲锋
         else if (skillName == "ReloadClip")
@@ -201,6 +204,7 @@ public class Hero : MonoBehaviour
     {
         if (weapon.IsCanFire())
         {
+            skillProtectTime = 0.2f;
             ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
@@ -215,6 +219,7 @@ public class Hero : MonoBehaviour
     {
         if (weapon.IsCanFire())
         {
+            skillProtectTime = 0.2f;
             ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
@@ -229,6 +234,7 @@ public class Hero : MonoBehaviour
     {
         if (weapon.IsCanFire())
         {
+            skillProtectTime = 0.2f;
             ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);

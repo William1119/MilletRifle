@@ -15,42 +15,50 @@ public class P1_HeroController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
         {
             hero.Move(hero.LEFT_UP);
-            hero.SetDirection(-45);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(-45);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
         {
             hero.Move(hero.LEFT_DOWN);
-            hero.SetDirection(-135);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(-135);
         }
         else if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
         {
             hero.Move(hero.RIGHT_UP);
-            hero.SetDirection(45);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(45);
         }
         else if (Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
         {
             hero.Move(hero.RIGHT_DOWN);
-            hero.SetDirection(135);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(135);
         }
         else if (Input.GetKey(KeyCode.W))
         {
             hero.Move(hero.UP);
-            hero.SetDirection(0);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(0);
         }
         else if (Input.GetKey(KeyCode.S))
         {
             hero.Move(hero.DOWN);
-            hero.SetDirection(180);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(180);
         }
         else if (Input.GetKey(KeyCode.A))
         {
             hero.Move(hero.LEFT);
-            hero.SetDirection(-90);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(-90);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             hero.Move(hero.RIGHT);
-            hero.SetDirection(90);
+            if (hero.skillProtectTime <= 0) //技能保护检查
+                hero.SetDirection(90);
         }
     }
 }

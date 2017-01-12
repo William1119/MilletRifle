@@ -33,7 +33,7 @@ public class Weapons : MonoBehaviour
     LineRenderer redLine;
     Renderer redLine_renderer;
     float frontSightMin = 0; //准星最小范围
-    float frontSightMax = 0.10f; //准星最大范围
+    float frontSightMax = 0.5f; //准星最大范围
     float frontSightRange = 0; //准星范围
     float frontSightMinus = 0.01f; //减少值
     float frontSightCD = 0.08f; //准星冷却间隔

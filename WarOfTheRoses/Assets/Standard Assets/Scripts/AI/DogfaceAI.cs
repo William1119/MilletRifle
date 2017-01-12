@@ -36,7 +36,7 @@ public class DogfaceAI : MonoBehaviour {
                 else
                     enemy.UseSkill("BlueAIAttack", target);
             }
-            else if (path != null && currentPoint <= 5)
+            else if (path != null && currentPoint < 5)
             {
                 updataTime = 0;
                 enemy.SetDirection(path[currentPoint]);
@@ -45,7 +45,7 @@ public class DogfaceAI : MonoBehaviour {
             }
         }
 
-        //if (updataTime >= 0.5 && !target && currentPoint > 5)
+        //if (updataTime >= 0.5 && !target && currentPoint >= 5)
         //{
         //    updataTime = 0;
         //    int randomPoint = (int)(Random.value * 100);
