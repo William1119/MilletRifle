@@ -46,7 +46,7 @@ public class Bullet : MonoBehaviour
         else if (other.tag == "P1" || other.tag == "Enemy" || other.tag == "RedAI")
         {
             if (other.tag == "P1")
-                bulletData.Damage *= 0.1f;
+                bulletData.Damage *= 0.2f;
             Hero hero = other.gameObject.GetComponent<Hero>();
             if (bulletData.Pierce > hero.heroData.Armor)
                 hero.heroData.Hp -= (int)bulletData.Damage;

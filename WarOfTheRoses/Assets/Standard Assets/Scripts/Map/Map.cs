@@ -416,7 +416,7 @@ public class Map : MonoBehaviour
         {
             GameObject p1 = Instantiate(p1_Prefab, p1_Born, transform.rotation) as GameObject;
             Hero hero = p1.AddComponent<Hero>();
-            hero.heroData = LoadXml.rolesData[101]; //娜塔莎
+            hero.heroData = LoadXml.rolesData[101];
             hero.isAI = false;
             p1.AddComponent<P1_HeroController>();
             p1.AddComponent<MoveController>();
@@ -435,14 +435,20 @@ public class Map : MonoBehaviour
                 if (rnd <= 33)
                 {
                     blueAI = Instantiate(blueAI_Prefab, blueAI_path1[0], transform.rotation) as GameObject;
+                    Transform t = blueAI.transform.Find("Sphere");
+                    t.gameObject.AddComponent<DogfaceAI>().path = blueAI_path1;
                 }
                 else if (rnd <= 66)
                 {
                     blueAI = Instantiate(blueAI_Prefab, blueAI_path2[0], transform.rotation) as GameObject;
+                    Transform t = blueAI.transform.Find("Sphere");
+                    t.gameObject.AddComponent<DogfaceAI>().path = blueAI_path2;
                 }
                 else
                 {
-                    blueAI = Instantiate(blueAI_Prefab, blueAI_path2[0], transform.rotation) as GameObject;
+                    blueAI = Instantiate(blueAI_Prefab, blueAI_path3[0], transform.rotation) as GameObject;
+                    Transform t = blueAI.transform.Find("Sphere");
+                    t.gameObject.AddComponent<DogfaceAI>().path = blueAI_path3;
                 }
                 blueAI.AddComponent<Hero>().heroData = LoadXml.rolesData[102];
                 blueAI.AddComponent<MoveController>();
@@ -457,18 +463,22 @@ public class Map : MonoBehaviour
                 if (rnd <= 33)
                 {
                     redAI = Instantiate(redAI_Prefab, redAI_path1[0], transform.rotation) as GameObject;
+                    Transform t = redAI.transform.Find("Sphere");
+                    t.gameObject.AddComponent<DogfaceAI>().path = redAI_path1;
                 }
                 else if (rnd <= 66)
                 {
                     redAI = Instantiate(redAI_Prefab, redAI_path2[0], transform.rotation) as GameObject;
+                    Transform t = redAI.transform.Find("Sphere");
+                    t.gameObject.AddComponent<DogfaceAI>().path = redAI_path2;
                 }
                 else
                 {
-                    redAI = Instantiate(redAI_Prefab, redAI_path2[0], transform.rotation) as GameObject;
+                    redAI = Instantiate(redAI_Prefab, redAI_path3[0], transform.rotation) as GameObject;
+                    Transform t = redAI.transform.Find("Sphere");
+                    t.gameObject.AddComponent<DogfaceAI>().path = redAI_path3;
                 }
-                Hero hero = redAI.AddComponent<Hero>();
-                hero.heroData = LoadXml.rolesData[101]; //娜塔莎
-                //hero.isAI = false;
+                redAI.AddComponent<Hero>().heroData = LoadXml.rolesData[101];
                 redAI.AddComponent<MoveController>();
                 redAI_number++;
                 redAI_count--;

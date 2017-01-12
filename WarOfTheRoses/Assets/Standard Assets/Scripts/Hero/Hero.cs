@@ -300,8 +300,8 @@ public class Hero : MonoBehaviour
         heroAnimation.CrossFade("attack3", 0.1f);
         startPosition = transform.position;
         lastChargeTime = Time.time;
-        audioSource[0].clip = audioClip_Charge;
-        audioSource[0].Play();
+        //audioSource[0].clip = audioClip_Charge;
+        //audioSource[0].Play();
         if (!isAI)
             weapon.SetRedLine(false);
     }
@@ -348,6 +348,7 @@ public class Hero : MonoBehaviour
 
     public void SetDirection(Vector3 point) //转向
     {
+        point.y = heroSkin.transform.position.y;
         heroSkin.transform.LookAt(point);
     }
 
