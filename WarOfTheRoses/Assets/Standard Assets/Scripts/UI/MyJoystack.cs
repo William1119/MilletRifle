@@ -59,7 +59,12 @@ public class MyJoystack : MonoBehaviour, IPointerUpHandler
                 hero = P1.GetComponent<Hero>();
 
             if (hero != null)
+            {
+                float angle = Mathf.Atan2(MovePosiNorm.x, MovePosiNorm.z) * Mathf.Rad2Deg;
+                hero.SetDirection(angle);
+                Debug.Log(angle);
                 hero.Move(MovePosiNorm);
+            }
         }
     }
 
