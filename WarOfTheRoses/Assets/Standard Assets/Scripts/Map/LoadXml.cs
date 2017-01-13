@@ -148,6 +148,7 @@ public class LoadXml
             tmpData.Pierce = float.Parse(xl1.Attributes["Pierce"].Value);
             tmpData.FlySpeed = float.Parse(xl1.Attributes["FlySpeed"].Value);
             tmpData.Block = float.Parse(xl1.Attributes["Block"].Value);
+            tmpData.MoveSpeed = float.Parse(xl1.Attributes["MoveSpeed"].Value);
             tmpData.Desc = xl1.Attributes["Desc"].Value;
 
             weaponsData.Add(tmpData.Id, tmpData);

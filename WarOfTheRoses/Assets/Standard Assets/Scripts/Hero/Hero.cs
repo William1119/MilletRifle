@@ -102,6 +102,8 @@ public class Hero : MonoBehaviour
         weapon._frontSight = GameObject.Find("Canvas/Joystack2/FrontSight").transform; //准星
         weapon.isAI = isAI;
         moveController = GetComponent<MoveController>();
+
+        p1_Target = transform.Find("Sphere").gameObject.GetComponent<P1_Target>();
     }
 
     void Update()
@@ -200,15 +202,27 @@ public class Hero : MonoBehaviour
             weapon.CallReloadClip(); //换弹夹
     }
 
+    public P1_Target p1_Target;
     void Attack() //攻击
     {
         if (weapon.IsCanFire())
         {
             skillProtectTime = 0.2f;
-            ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
+            ChangeSpeed(-heroData.MoveSpeed * (1 - weapon.weaponData.MoveSpeed), 0.2f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
-            weapon.Fire(); //武器射击
+            if (p1_Target.target)
+            {
+                Vector3 MovePosiNorm = p1_Target.target.localPosition - transform.localPosition;
+                MovePosiNorm = new Vector3(MovePosiNorm.x, 0, MovePosiNorm.z);
+                float angle = Mathf.Atan2(MovePosiNorm.x, MovePosiNorm.z) * Mathf.Rad2Deg;
+                SetDirection(angle);
+
+                //SetDirection(p1_Target.target.position);
+                weapon.RedAIFire(p1_Target.target); //武器射击
+            }
+            else
+                weapon.FireLine(); //武器射击
             audioSource[0].clip = audioClip_Gun;
             if (!audioSource[0].isPlaying)
                 audioSource[0].Play();
@@ -220,7 +234,7 @@ public class Hero : MonoBehaviour
         if (weapon.IsCanFire())
         {
             skillProtectTime = 0.2f;
-            ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
+            ChangeSpeed(-heroData.MoveSpeed * (1 - weapon.weaponData.MoveSpeed), 0.2f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
             weapon.RedAIFire(target); //武器射击
@@ -235,7 +249,7 @@ public class Hero : MonoBehaviour
         if (weapon.IsCanFire())
         {
             skillProtectTime = 0.2f;
-            ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
+            ChangeSpeed(-heroData.MoveSpeed * (1 - weapon.weaponData.MoveSpeed), 0.2f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
             weapon.BlueAIFire(target); //武器射击
@@ -250,7 +264,7 @@ public class Hero : MonoBehaviour
         if (weapon.IsCanFire())
         {
             skillProtectTime = 0.5f;
-            ChangeSpeed(-heroData.MoveSpeed * 0.5f,0.3f);
+            ChangeSpeed(-heroData.MoveSpeed * (1 - weapon.weaponData.MoveSpeed), 0.2f);
             heroAnimation.Stop();
             heroAnimation.CrossFade("attack1_1", 0.1f);
             weapon.CallTripleShot(); //三发连射
@@ -265,7 +279,7 @@ public class Hero : MonoBehaviour
     Object MineHitEffectPrefab = Resources.Load("Effect/MineBomb");
     void UseMine() //埋地雷
     {
-        ChangeSpeed(-heroData.MoveSpeed * 1f, 0.1f);
+        ChangeSpeed(-heroData.MoveSpeed * 1f, 0.2f);
         skillProtectTime = 0.6f;
         Mine(MinePrefab, MineEffectPrefab, MineHitEffectPrefab); //埋地雷
         audioSource[0].clip = audioClip_Mine;
@@ -285,7 +299,7 @@ public class Hero : MonoBehaviour
 
     void UseRPG() //使用RPG
     {
-        ChangeSpeed(-heroData.MoveSpeed * 0.5f, 0.1f);
+        ChangeSpeed(-heroData.MoveSpeed * (1 - weapon.weaponData.MoveSpeed), 0.2f);
         skillProtectTime = 0.8f;
         heroAnimation.Stop();
         heroAnimation.CrossFade("attack1_1", 0.1f);
@@ -294,7 +308,7 @@ public class Hero : MonoBehaviour
         audioSource[0].Play();
     }
 
-    float chargeDistance = 10;
+    float chargeDistance = 7;
     float chargeTime = 0.5f;
     float chargeSpeed = 20;
     float lastChargeTime = 0;
@@ -394,9 +408,9 @@ public class Hero : MonoBehaviour
         if (other.tag == "Grass")
             Disguise(true);
         if (other.tag == "Ice")
-            ChangeSpeed(heroData.MoveSpeed * 0.5f,0.1f);
+            ChangeSpeed(heroData.MoveSpeed * 0.5f,0.2f);
         if (other.tag == "Bog")
-            ChangeSpeed(-heroData.MoveSpeed * 0.5f,0.1f);
+            ChangeSpeed(-heroData.MoveSpeed * 0.5f,0.2f);
         if (other.tag == "Ladder")
             ladderTime = 0.1f;
     }

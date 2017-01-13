@@ -16,6 +16,7 @@ public struct WeaponsData //武器数据
     public float Pierce; //穿透力
     public float FlySpeed; //子弹飞行速度
     public float Block; //阻滞力
+    public float MoveSpeed; //射击移速
     public string Desc; //描述
 }
 
@@ -27,7 +28,7 @@ public class Weapons : MonoBehaviour
     public bool isAI;
 
     public Transform shootPoint;
-    WeaponsData weaponData;
+    public WeaponsData weaponData;
     public float _rateFire;
     GameObject obj; //武器
     LineRenderer redLine;
@@ -143,6 +144,27 @@ public class Weapons : MonoBehaviour
     {
         lastAttackTime = Time.time;
         shootPoint.LookAt(new Vector3(redPoint.x + Random.Range(-frontSightRange, frontSightRange), redPoint.y + Random.Range(-frontSightRange, frontSightRange), redPoint.z + Random.Range(-frontSightRange, frontSightRange)));
+        GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation) as GameObject;
+        GameObject effect = Instantiate(bulletEffectPrefab, bullet.transform.position, bullet.transform.rotation) as GameObject;
+        effect.transform.parent = bullet.transform;
+        Bullet bulletScript = bullet.AddComponent<Bullet>();
+        bulletScript.hitEffectPrefab = bulletHitEffectPrefab;
+        bulletScript.bulletData.Pierce = weaponData.Pierce;
+        bulletScript.bulletData.Damage = weaponData.Damage;
+        bulletScript.bulletData.FlySpeed = weaponData.FlySpeed;
+        bulletScript.bulletData.FlyDistance = weaponData.GunRange;
+        Hot(); //武器准星变大
+        clip--;
+        if (!isAI)
+            clipShow.text = clip.ToString();
+        if (clip <= 0)
+            CallReloadClip(); //重新填装子弹
+    }
+
+    public void FireLine() //直线射击
+    {
+        lastAttackTime = Time.time;
+        shootPoint.localRotation = Quaternion.Euler(0, 295, 0);
         GameObject bullet = Instantiate(bulletPrefab, shootPoint.position, shootPoint.transform.rotation) as GameObject;
         GameObject effect = Instantiate(bulletEffectPrefab, bullet.transform.position, bullet.transform.rotation) as GameObject;
         effect.transform.parent = bullet.transform;

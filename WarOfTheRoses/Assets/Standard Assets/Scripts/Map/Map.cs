@@ -425,6 +425,7 @@ public class Map : MonoBehaviour
             hero.isAI = false;
             p1.AddComponent<P1_HeroController>();
             p1.AddComponent<MoveController>();
+            hero.transform.Find("Sphere").gameObject.AddComponent<P1_Target>();
             //p1.AddComponent<RobotAI>(); //AI
             p1_number++;
             p1_life--;
