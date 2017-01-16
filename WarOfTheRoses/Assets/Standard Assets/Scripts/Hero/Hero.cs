@@ -94,10 +94,8 @@ public class Hero : MonoBehaviour
         audioSource[1].clip = audioClip_Move;
 
         weapon = heroSkin.AddComponent<Weapons>();
-        if (heroData.Id == 102)
-            weapon._weaponID = 101;
-        else
-            weapon._weaponID = 102;
+        weapon._weaponID = 102;
+
         weapon._bindPoint = "Dummy_WuQi";
         weapon._frontSight = GameObject.Find("Canvas/Joystack2/FrontSight").transform; //准星
         weapon.isAI = isAI;
@@ -200,6 +198,13 @@ public class Hero : MonoBehaviour
             UseCharge(); //冲锋
         else if (skillName == "ReloadClip")
             weapon.CallReloadClip(); //换弹夹
+        else if (skillName == "Tank")
+            UseTank(); //使用坦克
+    }
+
+    void UseTank() //使用坦克
+    {
+
     }
 
     public P1_Target p1_Target;
