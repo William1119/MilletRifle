@@ -16,7 +16,7 @@ public class MoveController : MonoBehaviour {
     {
         if (!controller.isGrounded)
         {
-            ////模拟重力
+            //模拟重力
             if (_mode != "Ladder")
             {
                 Vector3 moveDirection = Vector3.zero;
@@ -32,7 +32,6 @@ public class MoveController : MonoBehaviour {
         Vector3 moveDirection = point * speed;
         if (mode == "Ladder")
         {
-            
             if (point.z > 0.8)
                 moveDirection.y += ladderSpeed;
             else if (point.z < -0.8)
@@ -44,5 +43,6 @@ public class MoveController : MonoBehaviour {
 
         //角色移动
         controller.Move(moveDirection * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, transform.position + moveDirection, Time.deltaTime);
     }
 }
