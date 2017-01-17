@@ -219,7 +219,7 @@ public class Hero : MonoBehaviour
             }
             else
             {
-                if ((transform.position.x <= tank.transform.position.x + 2 && transform.position.x >= tank.transform.position.x - 2) && (transform.position.z <= tank.transform.position.z + 2 && transform.position.z >= tank.transform.position.z - 2))
+                if ((transform.position.x <= tank.transform.position.x + 3 && transform.position.x >= tank.transform.position.x - 3) && (transform.position.z <= tank.transform.position.z + 3 && transform.position.z >= tank.transform.position.z - 3))
                 {
                     transform.position = tank.transform.position;
                     tank.transform.parent = transform;
