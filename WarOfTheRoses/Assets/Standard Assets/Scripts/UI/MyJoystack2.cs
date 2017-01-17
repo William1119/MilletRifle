@@ -63,6 +63,7 @@ public class MyJoystack2 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         circular.SetActive(true);
         center.SetActive(true);
+        frontSight.SetActive(true);
         circular.transform.localPosition = transform.localPosition;
         Origin = transform.localPosition; ;//设置原点
         center.transform.localPosition = transform.localPosition + Current;
@@ -77,6 +78,7 @@ public class MyJoystack2 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         Current = center.transform.localPosition - circular.transform.localPosition;
         circular.SetActive(false);
         center.SetActive(false);
+        frontSight.SetActive(false);
         icon_ChangeGrey.color = Color.white;
     }
 
