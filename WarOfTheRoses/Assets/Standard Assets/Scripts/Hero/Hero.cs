@@ -102,6 +102,8 @@ public class Hero : MonoBehaviour
         moveController = GetComponent<MoveController>();
 
         p1_Target = transform.Find("Sphere").gameObject.GetComponent<P1_Target>();
+
+        tank = GameObject.Find("Tank");
     }
 
     void Update()
@@ -202,9 +204,30 @@ public class Hero : MonoBehaviour
             UseTank(); //使用坦克
     }
 
+    GameObject tank;
+    bool useTank = false;
     void UseTank() //使用坦克
     {
-
+        if (tank)
+        {
+            if (useTank)
+            {
+                tank.transform.parent = null;
+                transform.position = tank.transform.position + tank.transform.TransformDirection(Vector3.right)*2;
+                heroSkin.SetActive(true);
+                useTank = false;
+            }
+            else
+            {
+                if ((transform.position.x <= tank.transform.position.x + 2 && transform.position.x >= tank.transform.position.x - 2) && (transform.position.z <= tank.transform.position.z + 2 && transform.position.z >= tank.transform.position.z - 2))
+                {
+                    transform.position = tank.transform.position;
+                    tank.transform.parent = transform;
+                    heroSkin.SetActive(false);
+                    useTank = true;
+                }
+            }
+        }
     }
 
     public P1_Target p1_Target;
@@ -374,14 +397,27 @@ public class Hero : MonoBehaviour
     public void SetDirection(Vector3 point) //转向
     {
         point.y = heroSkin.transform.position.y;
-        heroSkin.transform.LookAt(point);
+        if (useTank)
+            tank.transform.LookAt(point,Vector3.forward);
+        else
+            heroSkin.transform.LookAt(point);
     }
 
     float _angle;
+    float _tankAngle;
     public void SetDirection(float angle) //转向
     {
-        heroSkin.transform.Rotate(Vector3.up, angle - _angle);
-        _angle = angle;
+        if (useTank)
+        {
+            tank.transform.Rotate(Vector3.forward, angle - _tankAngle);
+            _tankAngle = angle;
+        }
+        else
+        {
+            heroSkin.transform.Rotate(Vector3.up, angle - _angle);
+            _angle = angle;
+        }
+        
     }
 
     float disguiseTime = 0; //伪装时间
