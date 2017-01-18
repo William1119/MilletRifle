@@ -61,6 +61,14 @@ public class MyJoystack2 : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // 当按钮被按下后系统自动调用此方法  
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (P1 == null)
+            P1 = GameObject.Find("P1(Clone)");
+
+        if (P1 != null && hero == null)
+            hero = P1.GetComponent<Hero>();
+
+        if (hero.useTank)
+            return;
         circular.SetActive(true);
         center.SetActive(true);
         frontSight.SetActive(true);

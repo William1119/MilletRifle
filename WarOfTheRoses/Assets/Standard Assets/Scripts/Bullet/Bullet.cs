@@ -53,15 +53,12 @@ public class Bullet : MonoBehaviour
             if (other.transform.parent)
             {
                 Hero hero = other.transform.parent.gameObject.GetComponent<Hero>();
-                if (hero.useTank)
-                {
-                    bulletData.Damage *= 0.1f;
-                    if (bulletData.Pierce > hero.heroData.Armor)
-                        hero.heroData.Hp -= (int)bulletData.Damage;
-                    else
-                        hero.heroData.Hp -= (int)(bulletData.Damage - (hero.heroData.Armor - bulletData.Pierce));
-                    hero.showHP_SliderTime = 1.5f;
-                }
+                bulletData.Damage *= 0.1f;
+                if (bulletData.Pierce > hero.heroData.Armor)
+                    hero.heroData.Hp -= (int)bulletData.Damage;
+                else
+                    hero.heroData.Hp -= (int)(bulletData.Damage - (hero.heroData.Armor - bulletData.Pierce));
+                hero.showHP_SliderTime = 1.5f;
             }
         }
         else if (other.tag == "Home" || other.tag == "Wall")

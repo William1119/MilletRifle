@@ -35,6 +35,7 @@ public class Hero : MonoBehaviour
     AudioClip audioClip_Move;
     AudioClip audioClip_Mine;
     MoveController moveController;
+
     //初始化
     void Start()
     {
@@ -195,15 +196,15 @@ public class Hero : MonoBehaviour
         if (skillName == "Attack" && useTank)
             TankAttack();
 
-        if (skillName == "Mine")
+        if (skillName == "Mine" && !useTank)
             UseMine(); //埋地雷
-        else if (skillName == "RPG")
+        else if (skillName == "RPG" && !useTank)
             UseRPG(); //RPG
-        else if (skillName == "TripleShot")
+        else if (skillName == "TripleShot" && !useTank)
             TripleShot(); //三发连射
-        else if (skillName == "Charge")
+        else if (skillName == "Charge" && !useTank)
             UseCharge(); //冲锋
-        else if (skillName == "ReloadClip")
+        else if (skillName == "ReloadClip" && !useTank)
             weapon.CallReloadClip(); //换弹夹
         else if (skillName == "Tank")
             UseTank(); //使用坦克
@@ -223,15 +224,12 @@ public class Hero : MonoBehaviour
                 heroSkin.SetActive(true);
                 useTank = false;
             }
-            else
+            else if ((transform.position.x <= tank.transform.position.x + 3 && transform.position.x >= tank.transform.position.x - 3) && (transform.position.z <= tank.transform.position.z + 3 && transform.position.z >= tank.transform.position.z - 3))
             {
-                if ((transform.position.x <= tank.transform.position.x + 3 && transform.position.x >= tank.transform.position.x - 3) && (transform.position.z <= tank.transform.position.z + 3 && transform.position.z >= tank.transform.position.z - 3))
-                {
-                    transform.position = tank.transform.position;
-                    tank.transform.parent = transform;
-                    heroSkin.SetActive(false);
-                    useTank = true;
-                }
+                transform.position = tank.transform.position;
+                tank.transform.parent = transform;
+                heroSkin.SetActive(false);
+                useTank = true;
             }
         }
     }
