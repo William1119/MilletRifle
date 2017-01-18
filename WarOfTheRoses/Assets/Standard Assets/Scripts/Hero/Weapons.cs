@@ -264,6 +264,39 @@ public class Weapons : MonoBehaviour
         Hot(); //武器准星变大
     }
 
+    Object tankBulletPrefab = Resources.Load("Bullet/Red_TankBullet"); //加载RPG容器
+    public void TankFire(Transform fireShoot) //坦克攻击
+    {
+        lastAttackTime = Time.time;
+        fireShoot.localRotation = Quaternion.Euler(90, 0, 0);
+        GameObject bullet = Instantiate(tankBulletPrefab, fireShoot.position, fireShoot.transform.rotation) as GameObject;
+        GameObject effect = Instantiate(RPGEffectPrefab, bullet.transform.position, bullet.transform.rotation) as GameObject;
+        effect.transform.parent = bullet.transform;
+        Bullet bulletScript = bullet.AddComponent<Bullet>();
+        bulletScript.hitEffectPrefab = RPGHitEffectPrefab;
+        bulletScript.bulletData.Pierce = 500;
+        bulletScript.bulletData.Damage = 500;
+        bulletScript.bulletData.FlySpeed = 30;
+        bulletScript.bulletData.FlyDistance = weaponData.GunRange;
+        Hot(); //武器准星变大
+    }
+
+    public void TankFire(Transform fireShoot, Transform target) //坦克攻击
+    {
+        lastAttackTime = Time.time;
+        fireShoot.LookAt(new Vector3(target.position.x + Random.Range(-frontSightRange, frontSightRange), target.position.y + Random.Range(-frontSightRange, frontSightRange), target.position.z + Random.Range(-frontSightRange, frontSightRange)));
+        GameObject bullet = Instantiate(tankBulletPrefab, fireShoot.position, fireShoot.transform.rotation) as GameObject;
+        GameObject effect = Instantiate(RPGEffectPrefab, bullet.transform.position, bullet.transform.rotation) as GameObject;
+        effect.transform.parent = bullet.transform;
+        Bullet bulletScript = bullet.AddComponent<Bullet>();
+        bulletScript.hitEffectPrefab = RPGHitEffectPrefab;
+        bulletScript.bulletData.Pierce = 500;
+        bulletScript.bulletData.Damage = 500;
+        bulletScript.bulletData.FlySpeed = 30;
+        bulletScript.bulletData.FlyDistance = weaponData.GunRange;
+        Hot(); //武器准星变大
+    }
+
     float reloadTime = 0;
     bool reloading = false;
     public void CallReloadClip() //重新填装子弹

@@ -104,6 +104,7 @@ public class Hero : MonoBehaviour
         p1_Target = transform.Find("Sphere").gameObject.GetComponent<P1_Target>();
 
         tank = GameObject.Find("Tank");
+        tankShoot = tank.transform.Find("Dummy_shoot");
     }
 
     void Update()
@@ -180,7 +181,7 @@ public class Hero : MonoBehaviour
     public float skillProtectTime = 0;
     public void UseSkill(string skillName,Transform target)
     {
-        if (skillName == "Attack")
+        if (skillName == "Attack" && !useTank)
             Attack(); //攻击
         else if (skillName == "RedAIAttack")
             RedAIAttack(target); //攻击
@@ -189,6 +190,9 @@ public class Hero : MonoBehaviour
 
         if (skillProtectTime > 0) //技能保护检查
             return;
+
+        if (skillName == "Attack" && useTank)
+            TankAttack();
 
         if (skillName == "Mine")
             UseMine(); //埋地雷
@@ -205,6 +209,7 @@ public class Hero : MonoBehaviour
     }
 
     GameObject tank;
+    Transform tankShoot;
     bool useTank = false;
     void UseTank() //使用坦克
     {
@@ -245,8 +250,6 @@ public class Hero : MonoBehaviour
                 MovePosiNorm = new Vector3(MovePosiNorm.x, 0, MovePosiNorm.z);
                 float angle = Mathf.Atan2(MovePosiNorm.x, MovePosiNorm.z) * Mathf.Rad2Deg;
                 SetDirection(angle);
-
-                //SetDirection(p1_Target.target.position);
                 weapon.RedAIFire(p1_Target.target); //武器射击
             }
             else
@@ -254,6 +257,27 @@ public class Hero : MonoBehaviour
             audioSource[0].clip = audioClip_Gun;
             if (!audioSource[0].isPlaying)
                 audioSource[0].Play();
+        }
+    }
+
+    void TankAttack() //攻击
+    {
+        if (weapon.IsCanFire())
+        {
+            skillProtectTime = 0.8f;
+            ChangeSpeed(-heroData.MoveSpeed, 0.2f);
+            if (p1_Target.target)
+            {
+                Vector3 MovePosiNorm = p1_Target.target.localPosition - transform.localPosition;
+                MovePosiNorm = new Vector3(MovePosiNorm.x, 0, MovePosiNorm.z);
+                float angle = Mathf.Atan2(MovePosiNorm.x, MovePosiNorm.z) * Mathf.Rad2Deg;
+                SetDirection(angle);
+                weapon.TankFire(tankShoot, p1_Target.target); //武器射击
+            }
+            else
+                weapon.TankFire(tankShoot); //武器射击
+            audioSource[0].clip = audioClip_RPG;
+            audioSource[0].Play();
         }
     }
 
