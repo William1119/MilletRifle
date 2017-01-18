@@ -33,12 +33,12 @@ public class Mine : MonoBehaviour {
             Destroy(effect, 1.2f);
             Destroy(gameObject);
         
-            Tank tankScript = other.gameObject.GetComponent<Tank>();
-            if (mine.Pierce > tankScript.carriersData.Armor)
-                tankScript.carriersData.Hp -= (int)mine.Damage;
-            else
-                tankScript.carriersData.Hp -= (int)(mine.Damage - (tankScript.carriersData.Armor - mine.Pierce));
-            tankScript.showHP_SliderTime = 1.5f;
+            //Tank tankScript = other.gameObject.GetComponent<Tank>();
+            //if (mine.Pierce > tankScript.carriersData.Armor)
+            //    tankScript.carriersData.Hp -= (int)mine.Damage;
+            //else
+            //    tankScript.carriersData.Hp -= (int)(mine.Damage - (tankScript.carriersData.Armor - mine.Pierce));
+            //tankScript.showHP_SliderTime = 1.5f;
         }
     }
 }

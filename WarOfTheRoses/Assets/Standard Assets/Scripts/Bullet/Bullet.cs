@@ -34,25 +34,35 @@ public class Bullet : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        if (other.tag == "EnemyCarriers")
+        if (other.tag == "P1" || other.tag == "Enemy" || other.tag == "RedAI")
         {
-            Tank carriers = other.gameObject.GetComponent<Tank>();
-            if (bulletData.Pierce > carriers.carriersData.Armor)
-                carriers.carriersData.Hp -= (int)bulletData.Damage;
-            else
-                carriers.carriersData.Hp -= (int)(bulletData.Damage - (carriers.carriersData.Armor - bulletData.Pierce));
-            carriers.showHP_SliderTime = 1.5f;
-        }
-        else if (other.tag == "P1" || other.tag == "Enemy" || other.tag == "RedAI")
-        {
-            if (other.tag == "P1")
-                bulletData.Damage *= 0.2f;
             Hero hero = other.gameObject.GetComponent<Hero>();
+            if (hero.useTank)
+                bulletData.Damage *= 0.1f;
+            else if (other.tag == "P1")
+                bulletData.Damage *= 0.2f;
+
             if (bulletData.Pierce > hero.heroData.Armor)
                 hero.heroData.Hp -= (int)bulletData.Damage;
             else
                 hero.heroData.Hp -= (int)(bulletData.Damage - (hero.heroData.Armor - bulletData.Pierce));
             hero.showHP_SliderTime = 1.5f;
+        }
+        else if (other.tag == "Red_Tank")
+        {
+            if (other.transform.parent)
+            {
+                Hero hero = other.transform.parent.gameObject.GetComponent<Hero>();
+                if (hero.useTank)
+                {
+                    bulletData.Damage *= 0.1f;
+                    if (bulletData.Pierce > hero.heroData.Armor)
+                        hero.heroData.Hp -= (int)bulletData.Damage;
+                    else
+                        hero.heroData.Hp -= (int)(bulletData.Damage - (hero.heroData.Armor - bulletData.Pierce));
+                    hero.showHP_SliderTime = 1.5f;
+                }
+            }
         }
         else if (other.tag == "Home" || other.tag == "Wall")
         {

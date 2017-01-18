@@ -13,11 +13,13 @@
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
-    <CompilerResponseFile></CompilerResponseFile>
+    <CompilerResponseFile>
+    </CompilerResponseFile>
     <UnityProjectType>GamePlugins:3</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>5.3.4f1</UnityVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <LangVersion Condition=" '$(VisualStudioVersion)' != '10.0' ">4</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -70,8 +72,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Scripts\AI\DogfaceAI.cs" />
-    <Compile Include="Assets\Standard Assets\Scripts\AI\EnemyTank_AI_1.cs" />
-    <Compile Include="Assets\Standard Assets\Scripts\AI\Tank.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\Bullet\Mine.cs" />
     <Compile Include="Assets\Standard Assets\Scripts\Hero\CallSkill.cs" />

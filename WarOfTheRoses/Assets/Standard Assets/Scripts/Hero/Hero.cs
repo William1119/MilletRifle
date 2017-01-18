@@ -104,7 +104,8 @@ public class Hero : MonoBehaviour
         p1_Target = transform.Find("Sphere").gameObject.GetComponent<P1_Target>();
 
         tank = GameObject.Find("Tank");
-        tankShoot = tank.transform.Find("Dummy_shoot");
+        if (tank)
+            tankShoot = tank.transform.Find("Dummy_shoot");
     }
 
     void Update()
@@ -210,7 +211,7 @@ public class Hero : MonoBehaviour
 
     GameObject tank;
     Transform tankShoot;
-    bool useTank = false;
+    public bool useTank = false;
     void UseTank() //使用坦克
     {
         if (tank)
