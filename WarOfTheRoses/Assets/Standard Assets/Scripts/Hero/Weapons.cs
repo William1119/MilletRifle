@@ -43,6 +43,7 @@ public class Weapons : MonoBehaviour
     Text clipShow; //弹夹显示
     Text clipReloadTime;
     int clip;
+    int mask;
 
     void Start()
     {
@@ -65,6 +66,8 @@ public class Weapons : MonoBehaviour
             clipShow.text = weaponData.Clip.ToString();
         clipReloadTime = GameObject.Find("Canvas/ReloadClip/ReloadTime").GetComponent<Text>(); //弹夹装填时间显示
         _rateFire = 1 / weaponData.RateFire;
+
+        mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemy");
     }
 
     void Cooling() //武器准星缩小
@@ -109,7 +112,6 @@ public class Weapons : MonoBehaviour
             //redLine.SetPosition(0, shootPoint.position);
             if (MyJoystack2.hitTarget.transform)
             {
-                int mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemy");
                 if (Physics.Raycast(shootPoint.position,MyJoystack2.hitTarget.point - shootPoint.position, out redHit,25 ,mask))
                 {
                     redPoint = redHit.point;

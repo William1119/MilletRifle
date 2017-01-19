@@ -12,11 +12,16 @@ public class DogfaceAI : MonoBehaviour {
     Vector3 _direction;
     float _angle;
 
+    RaycastHit redHit;
+    int mask;
+
     void Start()
     {
         enemy = transform.parent.GetComponent<Hero>();
         _direction = enemy.DOWN;
         _angle = 180;
+        redHit = new RaycastHit();
+        mask = LayerMask.GetMask("Wall") + LayerMask.GetMask("Enemy") + LayerMask.GetMask("Border") + LayerMask.GetMask("RedAI") + LayerMask.GetMask("RedTank") + LayerMask.GetMask("P1");
     }
 
     void Update()
@@ -29,12 +34,28 @@ public class DogfaceAI : MonoBehaviour {
         {
             if (target)
             {
-                updataTime = 0;
-                enemy.SetDirection(target.position);
-                if (transform.parent.tag == "RedAI")
-                    enemy.UseSkill("RedAIAttack", target);
-                else
-                    enemy.UseSkill("BlueAIAttack", target);
+                if (Physics.Raycast(transform.position, target.position - transform.position, out redHit, 25, mask))
+                {
+                    if (redHit.transform.tag == "Wall" || redHit.transform.tag == "Border")
+                    {
+                        if (path != null && currentPoint < 5)
+                        {
+                            updataTime = 0;
+                            enemy.SetDirection(path[currentPoint]);
+                            if ((int)transform.position.x == (int)path[currentPoint].x && (int)transform.position.z == (int)path[currentPoint].z)
+                                currentPoint++;
+                        }
+                    }
+                    else
+                    {
+                        updataTime = 0;
+                        enemy.SetDirection(target.position);
+                        if (transform.parent.tag == "RedAI")
+                            enemy.UseSkill("RedAIAttack", target);
+                        else
+                            enemy.UseSkill("BlueAIAttack", target);
+                    }
+                }
             }
             else if (path != null && currentPoint < 5)
             {
