@@ -359,9 +359,9 @@ public class Hero : MonoBehaviour
         audioSource[0].Play();
     }
 
-    float chargeDistance = 7;
+    float chargeDistance = 5;
     float chargeTime = 0.5f;
-    float chargeSpeed = 20;
+    float chargeSpeed = 15;
     float lastChargeTime = 0;
     Vector3 startPosition;
     void UseCharge() //冲锋
